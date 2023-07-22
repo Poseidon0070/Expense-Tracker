@@ -35,9 +35,7 @@ function App() {
   return (
     <div>
       <NewExpense sendData={newExpenseHandler}></NewExpense>
-      
       <Expenses items={expenses}>
-        <ExpensesFilter></ExpensesFilter>
       </Expenses>
     </div>
   );

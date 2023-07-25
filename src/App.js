@@ -1,7 +1,8 @@
 import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
-const expenses = [
+import { useState } from "react";
+const dummyExpenses = [
   {
     id: 'e1',
     title: 'Toilet Paper',
@@ -27,11 +28,14 @@ const expenses = [
   },
 ];
 
-let newExpenseHandler = (expense) => {
-  console.log(expense)
-}
-
 function App() {
+  const [expenses,setExpenses] = useState(dummyExpenses)
+  
+  let newExpenseHandler = (expense) => {
+    setExpenses((previousExpenses) => {
+      return [expense, ...previousExpenses]
+    })
+  }
   return (
     <div>
       <NewExpense sendData={newExpenseHandler}></NewExpense>

@@ -26,11 +26,29 @@ const dummyExpenses = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: 'e5',
+    title: 'DoorMat',
+    amount: 300,
+    date: new Date(2022, 7, 12),
+  },
+  {
+    id: 'e6',
+    title: 'Laptop',
+    amount: 799,
+    date: new Date(2022, 3, 12),
+  },
+  {
+    id: 'e7',
+    title: 'Utensils',
+    amount: 300,
+    date: new Date(2019, 9, 12),
+  },
 ];
 
 function App() {
   const [expenses,setExpenses] = useState(dummyExpenses)
-  
+
   let newExpenseHandler = (expense) => {
     setExpenses((previousExpenses) => {
       return [expense, ...previousExpenses]
